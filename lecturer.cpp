@@ -219,18 +219,18 @@ begin:
 		PNODEST P = ST;
 		PNODEST Q = ST;
 		cout << left << setw(5) << "STT"
-		     << setw(20) << "Name"
+		     << setw(25) << "Name"
 		     << setw(10) << "Vang" << endl;
 
 		cout << setfill('-') << setw(5) << ""
-		     << setw(20) << ""
-		     << setw(10) << "" << setfill(' ')
+		     << setw(25) << ""
+		     << setw(6) << "" << setfill(' ')
 		     << endl;
 		int i = 0;
 		while (P != NULL) {
 			i++;
 			cout << left << setw(5) << i;
-			cout << left << setw(20) << P->data.getName();
+			cout << left << setw(25) << P->data.getName();
 			cout << setw(10) << P->data.getdiemdanh();
 			cout << endl;
 			P = P->next;
@@ -415,16 +415,19 @@ next_1:
 						cin >> diemQT;
 					}
 					Q2->data.setdiemqt(diemQT);
+					cout << "Cap nhap diem thanh cong!"; 
 					break;
 				}
 				else
 					Q2 = Q2->next;
 			}
+			if(Q2==NULL)
+				cout << "Sai ten sinh vien.";
 		}
 		else if(a==4) {
 			string name;
 			while (Q3 != NULL) {
-				cout << "Sinh vien: " << Q3->data.getName() << ", Diem GK: " << Q3->data.getdiemqt() << endl;
+				cout << "Sinh vien: " << Q3->data.getName() << ", Diem CK: " << Q3->data.getdiemck() << endl;
 				Q3 = Q3->next;
 			}
 			cout << "Nhap ten sinh vien can sua diem: ";
@@ -440,11 +443,14 @@ next_1:
 						cin >> diemCK;
 					}
 					Q4->data.setdiemck(diemCK);
+					cout << "Cap nhat diem thanh cong!"; 
 					break;
 				}
 				else
 					Q4 = Q4->next;
 			}
+			if(Q4 == NULL)
+				cout << "Sai ten sinh vien"; 
 		}
 		else if(a==5) {
 			while(H!=NULL) {
@@ -725,7 +731,7 @@ void lecturer::check(PNODEST temp0) {
 						cout <<"          	========================"<<endl;
 						cout <<"          	|1. Diem qua trinh moi |"<<endl;
 						cout <<"          	|0. Khong thay doi     |"<<endl;
-						cout <<" 		========================"<<endl;
+						cout <<" 		    ========================"<<endl;
 						cout << endl << "Nhap lua chon: ";
 						cin >> choice;
 						if(choice == 1) {

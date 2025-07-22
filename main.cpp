@@ -77,8 +77,8 @@ int main() {
 	lecturer lecturer1;
 	ListNodeST ST = NULL;
 	updata(ST,lecturer1);
-	PNODEST temp10 = ST;
-	PNODEST tempi = ST;
+	PNODEST temp10;
+	PNODEST tempi;
 	while(1) {
 MAIN:
 		system("cls");
@@ -100,6 +100,7 @@ RE:
 				goto RE;
 
 			while(1) {
+				temp10 = ST;
 				lecturer1.ltMenu(temp10);
 				int a;
 				cin>>a;
@@ -130,6 +131,7 @@ RE:
 					getch();
 				}
 				else if(a==9) {
+					tempi = ST;
 					lecturer1.check(tempi);
 					savedata(ST,lecturer1);
 				}
